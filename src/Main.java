@@ -10,10 +10,15 @@ public class Main {
             String playerName = menu.dataName();
             String playerType = menu.dataType(playerName);
 
+            menu.infoJoueur(playerName, playerType);
+
+            Game game = new Game();
+            game.start();
         } else if (choix.equals("2")) {
             System.out.println("So you have chosen.. death.");
-
+            sc.close();
         }
+
     }
 
 }
