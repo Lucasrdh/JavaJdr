@@ -1,35 +1,43 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-
+import Case.*;
 
 public class Game {
-    private int position;
-    private final int fin = 64;
+    private ArrayList<Case> plateau;
+
     private Menu menu;
+
     public Game(Menu menu) {
-        this.position = 1;
         this.menu = menu;
+        ajouterTableau();
     }
 
-    // Méthode pour simuler le lancer de dé
-    public int lancerDe() {
+    private void ajouterTableau() {
+        for (int i = 0; i < 64; i++) {
+            plateau.add(new CaseVide());
+        }
+     // plateau.add(new)
+
+    }
+
+
+    public int jouer_un_tour() {
         Random random = new Random();
         return random.nextInt(6) + 1;
     }
 
-    // Méthode pour avancer le joueur
     public void avancer(int pas) {
-        position += pas;
-        if (position > fin) {
-            position = fin;
+        positionJoueur += pas;
+        if (positionJoueur > fin) {
+            positionJoueur = fin;
         }
-        System.out.println("Tu es maintenant sur la case " + position + ".");
     }
 
     // Méthode pour vérifier si le joueur a gagné
     public boolean isGameWon() {
-        return position == fin;
+        return positionJoueur == fin;
     }
 
     // Le jeu commence ici
@@ -42,7 +50,7 @@ public class Game {
             String input = sc.nextLine();
 
             if (input.equals(" ")) {
-                int resultatDe = lancerDe();
+                int resultatDe = jouer_un_tour();
                 System.out.println("Tu as lancé un " + resultatDe + ".");
                 avancer(resultatDe);
 
@@ -54,7 +62,7 @@ public class Game {
                 System.out.println("Tu as quitté la partie.");
                 break;
             } else if (input.equals("B")) {
-            menu.infoDuJoueur();
+                menu.infoDuJoueur();
 
             } else {
                 System.out.println("Appuie sur 'espace' pour lancer le dé.");

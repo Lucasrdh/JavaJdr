@@ -8,6 +8,7 @@ public class Magicien extends Personnage {
         super(nom, "Magicien");
         this.setAttaque(15);
         this.setPv(7);
+        this.setPositionJoueur(0);
         this.setEquipementOffensif(new Sort());
         this.setEquipementDefensif(new Philtre());
     }

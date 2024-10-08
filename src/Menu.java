@@ -6,58 +6,46 @@ import java.util.Scanner;
 
 public class Menu {
     private Scanner myPlayer = new Scanner(System.in);
+    private Personnage personnage1;
 
-    Personnage personnage1;
     public Menu() {
-        System.out.println("Welcome to the Menu");
-        System.out.println("Would you like to play ?");
         System.out.println("Enter 1 to play !");
         System.out.println("Enter 2 to stay sad !");
     }
 
     public String dataName() {
         System.out.println("Quel est ton nom ?");
-        String newName = myPlayer.nextLine();
-        // personnage1 = new Personnages.Personnage(newName);
-        return newName;
+        return myPlayer.nextLine();
     }
 
-    public String dataType(String newName) {
+    public Personnage dataType(String newName) {
         String newType;
 
-
         while (true) {
-            System.out.println("Bienvenue " + newName + ". Quel est ta classe ? Un Guerrier ? Ou un Magicien ?");
+            System.out.println("Bienvenue " + newName + ". Quel est ta classe ? Un Guerrier ou un Magicien ?");
             newType = myPlayer.nextLine();
 
-            if (newType.equals("Guerrier")) {
+            if (newType.equalsIgnoreCase("Guerrier")) {
                 personnage1 = new Guerrier(newName);
                 break;
-            } else if (newType.equals("Magicien")) {
+            } else if (newType.equalsIgnoreCase("Magicien")) {
                 personnage1 = new Magicien(newName);
                 break;
-
             } else {
-                System.out.println("Eh cousin écrit Guerrier ou Magicien !");
+                System.out.println("Eh cousin, écris Guerrier ou Magicien !");
             }
         }
-        System.out.println("Tu est donc un " + newType + ".");
-        personnage1.setType(newType);
-        return newType;
+
+        System.out.println("Tu es donc un " + newType + ".");
+        return personnage1;
     }
 
-    public void infoJoueur(String newName, String newType) {
-        System.out.println("Si tu est un " + newType + "," + newName + ", voici donc tes statistiques :");
-
+    public void infoJoueur(Personnage personnage1) {
+        System.out.println("Voici tes statistiques :");
         System.out.println(personnage1);
-
-        // System.out.println("Mais comme tu est un " + newType + ", je t'ai aussi donner de quoi te défendre ! " );
-
     }
 
     public void infoDuJoueur() {
-       System.out.println(personnage1.toString());
+        System.out.println(personnage1);
     }
-
 }
-

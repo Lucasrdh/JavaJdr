@@ -1,6 +1,7 @@
 package Equipement;
+import Case.*;
 
-public class Bouclier extends EquipementDefensif{
+public class Bouclier extends EquipementDefensif implements Case {
     public Bouclier() {
         super();
         this.setNom("Bouclier en Bois");
@@ -8,4 +9,8 @@ public class Bouclier extends EquipementDefensif{
         this.setDefense(10);
     }
 
+    @Override
+    public void utiliser() {
+
+    }
 }

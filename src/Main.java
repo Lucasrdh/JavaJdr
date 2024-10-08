@@ -1,3 +1,5 @@
+import Personnages.Personnage;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,11 +10,11 @@ public class Main {
 
         if (choix.equals("1")) {
             String playerName = menu.dataName();
-            String playerType = menu.dataType(playerName);
+            Personnage player = menu.dataType(playerName);
 
-            menu.infoJoueur(playerName, playerType);
+            menu.infoJoueur(player);
 
-            Game game = new Game(menu);
+            Game game = new Game(player);
             game.start();
         } else if (choix.equals("2")) {
             System.out.println("So you have chosen.. death.");
