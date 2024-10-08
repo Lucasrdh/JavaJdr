@@ -12,13 +12,11 @@ public class Main {
 
             menu.infoJoueur(playerName, playerType);
 
-            Game game = new Game();
+            Game game = new Game(menu);
             game.start();
         } else if (choix.equals("2")) {
             System.out.println("So you have chosen.. death.");
             sc.close();
         }
-
     }
-
 }

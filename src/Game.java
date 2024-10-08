@@ -1,12 +1,15 @@
 import java.util.Random;
 import java.util.Scanner;
 
+
+
 public class Game {
     private int position;
     private final int fin = 64;
-
-    public Game() {
+    private Menu menu;
+    public Game(Menu menu) {
         this.position = 1;
+        this.menu = menu;
     }
 
     // Méthode pour simuler le lancer de dé
@@ -32,10 +35,10 @@ public class Game {
     // Le jeu commence ici
     public void start() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Le jeu commence ! Appuie sur 'espace' pour lancer le dé.");
+        System.out.println("Le jeu commence !");
 
         while (!isGameWon()) {
-            System.out.println("Appuie sur 'espace' pour lancer le dé, ou 'q' pour quitter.");
+            System.out.println("Appuie sur 'espace' pour lancer le dé, 'Q' pour quitter ou B pour voir les infos de ton perso !");
             String input = sc.nextLine();
 
             if (input.equals(" ")) {
@@ -50,6 +53,9 @@ public class Game {
             } else if (input.equals("q")) {
                 System.out.println("Tu as quitté la partie.");
                 break;
+            } else if (input.equals("B")) {
+            menu.infoDuJoueur();
+
             } else {
                 System.out.println("Appuie sur 'espace' pour lancer le dé.");
             }

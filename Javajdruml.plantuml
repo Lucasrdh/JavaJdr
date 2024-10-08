@@ -1,0 +1,102 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Arme {
+  + Arme(): 
+}
+class Bouclier {
+  + Bouclier(): 
+}
+class EquipementDefensif {
+  + EquipementDefensif(): 
+  + EquipementDefensif(String): 
+  - nom: String
+  - type: String
+  - Defense: int
+  + toString(): String
+   nom: String
+   Defense: int
+   type: String
+}
+class EquipementOffensif {
+  + EquipementOffensif(): 
+  - type: String
+  - nom: String
+  - puissance: int
+  + toString(): String
+   nom: String
+   puissance: int
+   type: String
+}
+class Game {
+  + Game(Menu): 
+  + start(): void
+  + lancerDe(): int
+  + avancer(int): void
+   gameWon: boolean
+}
+class Guerrier {
+  + Guerrier(String): 
+  + ouSuisJe(): void
+}
+class Magicien {
+  + Magicien(String): 
+  + ouSuisJe(): void
+}
+class Main {
+  + Main(): 
+  + main(String[]): void
+}
+class Menu {
+  + Menu(): 
+  + dataName(): String
+  + dataType(String): String
+  + infoDuJoueur(): void
+  + infoJoueur(String, String): void
+}
+class Personnage {
+  + Personnage(String): 
+  + Personnage(String, String): 
+  + Personnage(): 
+  - pv: int
+  - nom: String
+  - attaque: int
+  - type: String
+  + toString(): String
+  + ouSuisJe(): void
+   nom: String
+   equipementDefensif: EquipementDefensif
+   pv: int
+   type: String
+   equipementOffensif: EquipementOffensif
+   attaque: int
+}
+class Philtre {
+  + Philtre(): 
+}
+class Sort {
+  + Sort(): 
+}
+
+Arme                -[#000082,plain]-^  EquipementOffensif 
+Bouclier            -[#000082,plain]-^  EquipementDefensif 
+Game               "1" *-[#595959,plain]-> "menu\n1" Menu               
+Guerrier            -[#595959,dashed]->  Arme               : "«create»"
+Guerrier            -[#595959,dashed]->  Bouclier           : "«create»"
+Guerrier            -[#000082,plain]-^  Personnage         
+Magicien            -[#000082,plain]-^  Personnage         
+Magicien            -[#595959,dashed]->  Philtre            : "«create»"
+Magicien            -[#595959,dashed]->  Sort               : "«create»"
+Main                -[#595959,dashed]->  Game               : "«create»"
+Main                -[#595959,dashed]->  Menu               : "«create»"
+Menu                -[#595959,dashed]->  Guerrier           : "«create»"
+Menu                -[#595959,dashed]->  Magicien           : "«create»"
+Menu               "1" *-[#595959,plain]-> "personnage1\n1" Personnage         
+Personnage         "1" *-[#595959,plain]-> "armure\n1" EquipementDefensif 
+Personnage         "1" *-[#595959,plain]-> "arme\n1" EquipementOffensif 
+Philtre             -[#000082,plain]-^  EquipementDefensif 
+Sort                -[#000082,plain]-^  EquipementOffensif 
+@enduml
