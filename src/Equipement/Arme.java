@@ -1,5 +1,7 @@
 package Equipement;
 import Case.*;
+import Personnages.Personnage;
+
 public class Arme extends EquipementOffensif implements Case {
     public Arme() {
         super();
@@ -9,7 +11,7 @@ public class Arme extends EquipementOffensif implements Case {
     }
 
     @Override
-    public void utiliser() {
+    public void utiliser(Personnage joueur) {
 
     }
 }

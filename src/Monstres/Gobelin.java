@@ -1,6 +1,9 @@
 package Monstres;
 
-public class Gobelin extends Monstres {
+import Case.Case;
+import Personnages.Personnage;
+
+public class Gobelin extends Monstres implements Case {
 
     public Gobelin() {
         super();
@@ -16,4 +19,8 @@ public class Gobelin extends Monstres {
 
     }
 
+    @Override
+    public void utiliser(Personnage joueur) {
+
+    }
 }

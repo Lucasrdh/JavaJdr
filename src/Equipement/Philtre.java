@@ -1,5 +1,6 @@
 package Equipement;
 import Case.*;
+import Personnages.Personnage;
 
 public class Philtre extends EquipementDefensif implements Case {
     public Philtre() {
@@ -8,8 +9,10 @@ public class Philtre extends EquipementDefensif implements Case {
         this.setNom("Armure de mage");
         this.setType("Philtre");
     }
+
+
     @Override
-    public void utiliser() {
+    public void utiliser(Personnage joueur) {
 
     }
 }

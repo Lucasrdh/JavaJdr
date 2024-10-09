@@ -3,25 +3,30 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 import Case.*;
+import Personnages.Personnage;
 
 public class Game {
     private ArrayList<Case> plateau;
-
+    private Personnage joueur;
     private Menu menu;
+    private GameView gameView = new GameView();
 
-    public Game(Menu menu) {
+    public Game(Menu menu, Personnage joueur) {
         this.menu = menu;
+        this.joueur = joueur;
+        this.joueur.setPositionJoueur(0);
         ajouterTableau();
+
     }
 
     private void ajouterTableau() {
+        plateau = new ArrayList<>();
         for (int i = 0; i < 64; i++) {
             plateau.add(new CaseVide());
         }
-     // plateau.add(new)
+        // plateau.add(new)
 
     }
-
 
     public int jouer_un_tour() {
         Random random = new Random();
@@ -29,43 +34,51 @@ public class Game {
     }
 
     public void avancer(int pas) {
-        positionJoueur += pas;
-        if (positionJoueur > fin) {
-            positionJoueur = fin;
+        int nouvellePosition = joueur.getPositionJoueur() + pas;
+        if (nouvellePosition >= plateau.size()) {
+            nouvellePosition = plateau.size() - 1;
         }
+        joueur.setPositionJoueur(nouvellePosition);
+        gameView.afficherPosition(nouvellePosition);
+
+        //Case caseActuelle: On crée une variable qui peut contenir n'importe quel type de case (grâce à l'interface).
+        //plateau.get(nouvellePosition): On récupère la case à la position actuelle du joueur.
+        //caseActuelle.utiliser(joueur): On appelle une méthode sur cette case, ce qui entraîne un comportement défini par le type spécifique de la case.
+        Case caseActuelle = plateau.get(nouvellePosition);
+        caseActuelle.utiliser(joueur);
     }
 
     // Méthode pour vérifier si le joueur a gagné
     public boolean isGameWon() {
-        return positionJoueur == fin;
+        return joueur.getPositionJoueur() == plateau.size() -1;
     }
 
     // Le jeu commence ici
     public void start() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Le jeu commence !");
+        gameView.welcome();
 
+        Scanner sc = new Scanner(System.in);
         while (!isGameWon()) {
-            System.out.println("Appuie sur 'espace' pour lancer le dé, 'Q' pour quitter ou B pour voir les infos de ton perso !");
+            gameView.afficherTouche();
             String input = sc.nextLine();
 
             if (input.equals(" ")) {
                 int resultatDe = jouer_un_tour();
-                System.out.println("Tu as lancé un " + resultatDe + ".");
                 avancer(resultatDe);
 
                 if (isGameWon()) {
-                    System.out.println("Félicitations ! Tu as atteint la case 64 et gagné !");
+                    gameView.afficherVictoire();
+                    break;
                 }
 
             } else if (input.equals("q")) {
-                System.out.println("Tu as quitté la partie.");
+                // quitter la partie
                 break;
-            } else if (input.equals("B")) {
+            } else if (input.equals("b")) {
                 menu.infoDuJoueur();
 
             } else {
-                System.out.println("Appuie sur 'espace' pour lancer le dé.");
+                gameView.concentre();
             }
         }
         sc.close();

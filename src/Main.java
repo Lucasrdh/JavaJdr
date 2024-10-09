@@ -10,11 +10,11 @@ public class Main {
 
         if (choix.equals("1")) {
             String playerName = menu.dataName();
-            Personnage player = menu.dataType(playerName);
+            Personnage joueur = menu.dataType(playerName);
 
-            menu.infoJoueur(player);
+            menu.infoJoueur(joueur);
 
-            Game game = new Game(player);
+            Game game = new Game(menu,joueur);
             game.start();
         } else if (choix.equals("2")) {
             System.out.println("So you have chosen.. death.");

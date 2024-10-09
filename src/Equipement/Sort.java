@@ -1,5 +1,7 @@
 package Equipement;
 import Case.*;
+import Personnages.Personnage;
+
 public class Sort extends EquipementOffensif implements Case {
     public Sort() {
         super();
@@ -7,8 +9,10 @@ public class Sort extends EquipementOffensif implements Case {
         this.setNom("Boule de feu");
         this.setType("Spell");
     }
+
+
     @Override
-    public void utiliser() {
+    public void utiliser(Personnage joueur) {
 
     }
 }

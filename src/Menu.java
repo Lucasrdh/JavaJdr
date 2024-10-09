@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
     private Scanner myPlayer = new Scanner(System.in);
-    private Personnage personnage1;
+    private Personnage joueur;
 
     public Menu() {
         System.out.println("Enter 1 to play !");
@@ -26,10 +26,10 @@ public class Menu {
             newType = myPlayer.nextLine();
 
             if (newType.equalsIgnoreCase("Guerrier")) {
-                personnage1 = new Guerrier(newName);
+                joueur = new Guerrier(newName);
                 break;
             } else if (newType.equalsIgnoreCase("Magicien")) {
-                personnage1 = new Magicien(newName);
+                joueur = new Magicien(newName);
                 break;
             } else {
                 System.out.println("Eh cousin, écris Guerrier ou Magicien !");
@@ -37,7 +37,7 @@ public class Menu {
         }
 
         System.out.println("Tu es donc un " + newType + ".");
-        return personnage1;
+        return joueur;
     }
 
     public void infoJoueur(Personnage personnage1) {
@@ -46,6 +46,6 @@ public class Menu {
     }
 
     public void infoDuJoueur() {
-        System.out.println(personnage1);
+        System.out.println(joueur);
     }
 }
