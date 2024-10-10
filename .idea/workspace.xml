@@ -5,20 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d566fd3d-0b77-46c9-b801-9123a66bc21d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Bonus/Bonus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Bonus/Potion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus/Bonus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bonus/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus/Potion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Case/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Case/Case.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Case/CaseVide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Case/CaseVide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Equipement/Arme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipement/Arme.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Equipement/Bouclier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipement/Bouclier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Equipement/Philtre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipement/Philtre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Equipement/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipement/Sort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/Arme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/Arme.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/Bouclier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/Bouclier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/EquipementDefensif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/EquipementDefensif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/EquipementOffensif.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/EquipementOffensif.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/Philtre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/Philtre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Equipement/Sort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/equipement/Sort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Monstres/Gobelin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monstres/Gobelin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monstres/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monstres/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monstres/Gobelin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monstres/Gobelin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monstres/Monstres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monstres/Monstres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Monstres/Sorcier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monstres/Sorcier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnages/Guerrier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personnages/Guerrier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnages/Magicien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personnages/Magicien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Personnages/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personnages/Personnage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +120,9 @@
       <workItem from="1728312066792" duration="38000" />
       <workItem from="1728373219125" duration="5532000" />
       <workItem from="1728380555163" duration="16391000" />
-      <workItem from="1728460889125" duration="14758000" />
+      <workItem from="1728460889125" duration="15583000" />
+      <workItem from="1728544909211" duration="13393000" />
+      <workItem from="1728561989786" duration="8918000" />
     </task>
     <servers />
   </component>
@@ -134,13 +144,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Personnages/Magicien.java</url>
-          <line>17</line>
+          <url>file://$PROJECT_DIR$/src/Game.java</url>
+          <line>43</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

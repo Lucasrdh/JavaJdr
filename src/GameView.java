@@ -7,8 +7,6 @@ public class GameView {
     public void afficherPosition(int position) {
         System.out.println("Tu avances à la case : " + (position + 1));
     }
-
-
     public void afficherVictoire() {
         System.out.println("Tu est arriver à la dernière case ! Tu as gagné bravo !");
     }

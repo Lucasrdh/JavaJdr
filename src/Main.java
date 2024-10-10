@@ -1,4 +1,4 @@
-import Personnages.Personnage;
+import personnages.Personnage;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-import Personnages.Guerrier;
-import Personnages.Magicien;
-import Personnages.Personnage;
+import personnages.Guerrier;
+import personnages.Magicien;
+import personnages.Personnage;
 
 import java.util.Scanner;
 

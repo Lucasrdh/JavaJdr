@@ -1,6 +1,6 @@
 package Case;
 
-import Personnages.Personnage;
+import personnages.Personnage;
 
 public interface Case {
     void utiliser(Personnage joueur);

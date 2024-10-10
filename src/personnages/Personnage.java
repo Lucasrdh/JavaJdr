@@ -1,8 +1,11 @@
-package Personnages;
-import Equipement.EquipementDefensif;
-import Equipement.EquipementOffensif;
+package personnages;
 
-public abstract class  Personnage {
+import equipement.Arme;
+import equipement.EquipementDefensif;
+import equipement.EquipementOffensif;
+import equipement.Philtre;
+
+public abstract class Personnage {
     private String type;
     private String nom;
     private int pv;
@@ -76,6 +79,7 @@ public abstract class  Personnage {
         this.attaque = attaque;
     }
 
+
     public void setEquipementOffensif(EquipementOffensif equipementOffensif) {
         this.arme = equipementOffensif;
     }
@@ -83,6 +87,7 @@ public abstract class  Personnage {
     public void setEquipementDefensif(EquipementDefensif equipementDefensif) {
         this.armure = equipementDefensif;
     }
+
 
     public String toString() {
         String myPersonnage = "Nom : " + nom + "\r\n";
@@ -102,5 +107,45 @@ public abstract class  Personnage {
         return myPersonnage;
     }
 
+
+    public void equiperDefensif(EquipementDefensif equipement) {
+        if (isDefenseCompatible(equipement)) {
+            System.out.println("Ouah ! Vous trouvez : " + equipement.getNom() + " !");
+            System.out.println("Sa défense est de : " + equipement.getDefense());
+
+            if (this.getEquipementDefensif().getDefense() <= equipement.getDefense()) {
+                System.out.println("Comme ce " + getDefenseType() + " est meilleur tu t'en équipe !");
+                this.setEquipementDefensif(equipement);
+
+            } else if (this.getEquipementDefensif().getDefense() > equipement.getDefense()) {
+                System.out.println("Ton " + getDefenseType() + " actuel est plus puissant ! Tu t'équipe donc pas de : " + equipement.getNom() + " !");
+            }
+
+
+        }
+    }
+
+    public void equiperOffensif(EquipementOffensif equipement) {
+        if (isArmeCompatible(equipement)) {
+            System.out.println("Ouah ! Vous trouvez : " + equipement.getNom() + " !");
+            System.out.println("Sa puissance est de : " + equipement.getPuissance());
+
+            if (this.getEquipementOffensif().getPuissance() <= equipement.getPuissance()) {
+                System.out.println("Comme " + getArmeType() +" est meilleur tu t'en équipe !");
+                this.setEquipementOffensif(equipement);
+            } else if (this.getEquipementOffensif().getPuissance() >= equipement.getPuissance()) {
+                System.out.println("Ton arme actuelle est plus puissant ! Tu t'équipe donc pas de : " + equipement.getNom() + " !");
+
+            }
+        }
+
+    }
+    protected abstract String getDefenseType();
+
+    protected abstract String getArmeType();
+
+    protected abstract boolean isDefenseCompatible(EquipementDefensif equipement);
+
+    protected abstract boolean isArmeCompatible(EquipementOffensif equipement);
 }
 

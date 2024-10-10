@@ -1,4 +1,4 @@
-package Monstres;
+package monstres;
 
 public abstract class Monstres {
     private String nom;
@@ -6,7 +6,6 @@ public abstract class Monstres {
     private int attaque;
     private int hp;
 
-    public abstract void jeSersARien();
 
     public Monstres() {
 

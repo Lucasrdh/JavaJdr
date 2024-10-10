@@ -1,4 +1,4 @@
-package Bonus;
+package bonus;
 
 public abstract class Bonus {
     private int bonus;

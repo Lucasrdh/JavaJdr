@@ -1,15 +1,12 @@
-package Equipement;
+package equipement;
 
-public class EquipementDefensif {
+public class EquipementOffensif {
     private String nom;
     private String type;
-    private int Defense;
+    private int puissance;
 
-    public EquipementDefensif(String personnageType) {
 
-    }
-
-    public EquipementDefensif() {
+    public EquipementOffensif() {
 
     }
 
@@ -29,15 +26,16 @@ public class EquipementDefensif {
         this.type = type;
     }
 
-    public int getDefense() {
-        return Defense;
+    public int getPuissance() {
+        return puissance;
     }
 
-    public void setDefense(int defense) {
-        Defense = defense;
+    public void setPuissance(int puissance) {
+        this.puissance = puissance;
     }
 
     public String toString() {
-        return nom + " " + "(Défense : " + Defense + ")";
+        return nom + " " + "(Puissance : " + puissance + ")";
     }
+
 }

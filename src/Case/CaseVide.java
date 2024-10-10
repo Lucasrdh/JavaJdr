@@ -1,6 +1,6 @@
 package Case;
 
-import Personnages.Personnage;
+import personnages.Personnage;
 
 public class CaseVide implements Case {
 

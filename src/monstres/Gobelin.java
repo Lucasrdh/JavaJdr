@@ -1,7 +1,7 @@
-package Monstres;
+package monstres;
 
 import Case.Case;
-import Personnages.Personnage;
+import personnages.Personnage;
 
 public class Gobelin extends Monstres implements Case {
 
@@ -11,12 +11,6 @@ public class Gobelin extends Monstres implements Case {
         this.setNom("Golbun");
         this.setAttaque(1);
         this.setType("Gobelin");
-    }
-
-
-    @Override
-    public void jeSersARien() {
-
     }
 
     @Override
