@@ -46,12 +46,13 @@ public class Game {
         plateau.add(new Sorcier());
 
     }
-
+///
     public int jouer_un_tour() {
 //        Random random = new Random();
 //        return random.nextInt(6) + 1;
         return 1;
     }
+
 
     public void avancer(int pas) {
         int nouvellePosition = joueur.getPositionJoueur() + pas;

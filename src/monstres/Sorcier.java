@@ -5,7 +5,7 @@ import personnages.Personnage;
 
 public class Sorcier extends Monstres implements Case {
 
-    public Sorcier(){
+    public Sorcier() {
         super();
         this.setHp(9);
         this.setAttaque(2);
@@ -13,10 +13,4 @@ public class Sorcier extends Monstres implements Case {
         this.setType("Sorcier");
     }
 
-
-
-    @Override
-    public void utiliser(Personnage joueur) {
-        System.out.println("un sorcier");
-    }
 }

@@ -42,4 +42,7 @@ public class Magicien extends Personnage {
     protected boolean isArmeCompatible(EquipementOffensif equipement) {
         return equipement instanceof Sort;
     }
+
+
+
 }

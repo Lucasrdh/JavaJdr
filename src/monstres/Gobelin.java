@@ -3,7 +3,7 @@ package monstres;
 import Case.Case;
 import personnages.Personnage;
 
-public class Gobelin extends Monstres implements Case {
+public class Gobelin extends Monstres {
 
     public Gobelin() {
         super();
@@ -13,8 +13,5 @@ public class Gobelin extends Monstres implements Case {
         this.setType("Gobelin");
     }
 
-    @Override
-    public void utiliser(Personnage joueur) {
 
-    }
 }

@@ -1,11 +1,12 @@
 package personnages;
 
+import combat.Combat;
 import equipement.Arme;
 import equipement.EquipementDefensif;
 import equipement.EquipementOffensif;
 import equipement.Philtre;
 
-public abstract class Personnage {
+public abstract class Personnage implements Combat {
     private String type;
     private String nom;
     private int pv;
@@ -51,7 +52,7 @@ public abstract class Personnage {
     }
 
     public int getAttaque() {
-        return attaque;
+        return this.attaque + getEquipementOffensif().getPuissance();
     }
 
     public EquipementOffensif getEquipementOffensif() {
@@ -107,6 +108,21 @@ public abstract class Personnage {
         return myPersonnage;
     }
 
+    @Override
+    public void recevoirAttaque(int degats) {
+        int defense = getEquipementDefensif().getDefense();
+        int degatsSubis = degats - defense;
+        if (degatsSubis < 0) {
+            degatsSubis = 0;
+        }
+        this.pv -= degatsSubis;
+    }
+
+    @Override
+    public void combattre(Personnage joueur) {
+
+    }
+
 
     public void equiperDefensif(EquipementDefensif equipement) {
         if (isDefenseCompatible(equipement)) {
@@ -131,7 +147,7 @@ public abstract class Personnage {
             System.out.println("Sa puissance est de : " + equipement.getPuissance());
 
             if (this.getEquipementOffensif().getPuissance() <= equipement.getPuissance()) {
-                System.out.println("Comme " + getArmeType() +" est meilleur tu t'en équipe !");
+                System.out.println("Comme " + getArmeType() + " est meilleur tu t'en équipe !");
                 this.setEquipementOffensif(equipement);
             } else if (this.getEquipementOffensif().getPuissance() >= equipement.getPuissance()) {
                 System.out.println("Ton arme actuelle est plus puissant ! Tu t'équipe donc pas de : " + equipement.getNom() + " !");
@@ -140,6 +156,7 @@ public abstract class Personnage {
         }
 
     }
+
     protected abstract String getDefenseType();
 
     protected abstract String getArmeType();

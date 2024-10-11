@@ -41,5 +41,6 @@ public class Guerrier extends Personnage {
     protected boolean isArmeCompatible(EquipementOffensif equipement) {
         return equipement instanceof Arme;
     }
+
 }
 
