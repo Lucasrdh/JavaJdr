@@ -10,9 +10,8 @@ public class Magicien extends Personnage {
         super(nom, "Magicien");
         this.setAttaque(15);
         this.setPv(7);
-        this.setPositionJoueur(0);
-        this.setEquipementOffensif(new Sort("Petite boule de feu", 3));
-        this.setEquipementDefensif(new Philtre("Armure de papier", 2));
+        this.setEquipementOffensif(new Sort("Petite boule de feu", 1));
+        this.setEquipementDefensif(new Philtre("Armure de papier", 1));
     }
 
     public void ouSuisJe() {

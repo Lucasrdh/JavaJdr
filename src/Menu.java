@@ -1,16 +1,12 @@
 import personnages.Guerrier;
 import personnages.Magicien;
 import personnages.Personnage;
-
 import java.util.Scanner;
 
 public class Menu {
     private Scanner myPlayer = new Scanner(System.in);
-    private Personnage joueur;
 
     public Menu() {
-        System.out.println("Enter 1 to play !");
-        System.out.println("Enter 2 to stay sad !");
     }
 
     public String dataName() {
@@ -26,26 +22,16 @@ public class Menu {
             newType = myPlayer.nextLine();
 
             if (newType.equalsIgnoreCase("Guerrier")) {
-                joueur = new Guerrier(newName);
-                break;
+                return new Guerrier(newName);
             } else if (newType.equalsIgnoreCase("Magicien")) {
-                joueur = new Magicien(newName);
-                break;
+                return new Magicien(newName);
             } else {
                 System.out.println("Eh cousin, écris Guerrier ou Magicien !");
             }
         }
-
-        System.out.println("Tu es donc un " + newType + ".");
-        return joueur;
     }
 
-    public void infoJoueur(Personnage personnage1) {
-        System.out.println("Voici tes statistiques :");
+    public void infoDuJoueur(Personnage personnage1) {
         System.out.println(personnage1);
-    }
-
-    public void infoDuJoueur() {
-        System.out.println(joueur);
     }
 }

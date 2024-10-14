@@ -1,7 +1,8 @@
 public class GameView {
 
     public void welcome() {
-        System.out.println("Bienvenue dans mon jeu !");
+        System.out.println("Bienvenue dans le jeux de plateau D&D ! Ton but est d'arriver à la case final sans mourir ! Tu trouveras sur ta route des choses insane !");
+
     }
 
     public void afficherPosition(int position) {

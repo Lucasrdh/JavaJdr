@@ -11,7 +11,6 @@ public abstract class Personnage implements Combat {
     private String nom;
     private int pv;
     private int attaque;
-    private int positionJoueur;
     private EquipementOffensif arme;
     private EquipementDefensif armure;
 
@@ -21,14 +20,6 @@ public abstract class Personnage implements Combat {
         this.nom = nom;
         this.type = type;
         this.setType(type);
-    }
-
-    public int getPositionJoueur() {
-        return positionJoueur;
-    }
-
-    public void setPositionJoueur(int positionJoueur) {
-        this.positionJoueur = positionJoueur;
     }
 
     public Personnage(String nom) {
