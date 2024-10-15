@@ -1,3 +1,4 @@
+import java.lang.module.FindException;
 import java.util.*;
 
 import Case.*;
@@ -119,10 +120,13 @@ public class Game {
     }
 
     // Méthode pour avancer le personnage sur le plateau
-    public void avancer(int pas) {
+    public void avancer(int pas) throws FinDeJeuException {
         int nouvellePosition = positionJoueur + pas;
         if (nouvellePosition >= plateau.size()) {
             nouvellePosition = plateau.size() - 1;
+        }
+        if (nouvellePosition == plateau.size() - 1) {
+            throw new FinDeJeuException("You are the winner !");
         }
         positionJoueur = nouvellePosition;
         gameView.afficherPosition(nouvellePosition);
@@ -140,17 +144,26 @@ public class Game {
     // Méthode principale pour démarrer le jeu
     public void start() {
         gameView.welcome();
-        while (!isGameWon()) {
+        while (true) {  // On utilise un `while (true)` car on va gérer nous-mêmes la condition de fin de jeu
             gameView.afficherTouche();
             String input = sc.nextLine();
 
             if (input.equals(" ")) {
-                int resultatDe = jouer_un_tour();
-                avancer(resultatDe);
+                try {
+                    int resultatDe = jouer_un_tour();
+                    avancer(resultatDe);  // Ici, avancer peut lancer une FinDeJeuException
 
-                if (isGameWon()) {
+                    // Si le joueur gagne, on sort de la boucle
+                    if (isGameWon()) {
+                        gameView.afficherVictoire();
+                        break;
+                    }
+                } catch (FinDeJeuException e) {
+                    // Si l'exception est lancée, on l'attrape ici
                     gameView.afficherVictoire();
-                    break;
+                    gameView.afficherFinJeu(e.getMessage());
+
+                    break;  // On quitte la boucle si le jeu est terminé
                 }
 
             } else if (input.equals("q")) {

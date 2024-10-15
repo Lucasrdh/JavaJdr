@@ -18,4 +18,8 @@ public class GameView {
     public void concentre(){
         System.out.println("Concentre toi stp..");
     }
+
+    public void afficherFinJeu(String message) {
+        System.out.println(message);
+    }
 }

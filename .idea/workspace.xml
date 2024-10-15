@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d566fd3d-0b77-46c9-b801-9123a66bc21d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/class_diagram.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/use_case_diagram.puml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FinDeJeuException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javajdr.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javajdr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Javajdruml.plantuml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/class_diagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/class_diagram.puml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Case/Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Case/Case.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Case/CaseVide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Case/CaseVide.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bonus/Bonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus/Bonus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bonus/Potion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus/Potion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/combat/Combat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/combat/Combat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monstres/Monstres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monstres/Monstres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/personnages/Personnage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/personnages/Personnage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +28,9 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="UML Use Case" />
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -47,7 +52,7 @@
     "DefaultPlantUmlFileTemplate": "UML Class",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "multi",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lucas.chretien/IdeaProjects/Javajdr",
@@ -69,6 +74,7 @@
       <recent name="C:\Users\lucas.chretien\IdeaProjects\Javajdr" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas.chretien\IdeaProjects\Javajdr\src" />
       <recent name="C:\Users\lucas.chretien\IdeaProjects\Javajdr" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -122,7 +128,7 @@
       <workItem from="1728977964829" duration="249000" />
       <workItem from="1728978234635" duration="572000" />
       <workItem from="1728978849749" duration="870000" />
-      <workItem from="1728979744619" duration="4137000" />
+      <workItem from="1728979744619" duration="17029000" />
     </task>
     <servers />
   </component>

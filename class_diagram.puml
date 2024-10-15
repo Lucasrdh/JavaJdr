@@ -52,6 +52,9 @@ class Gobelin extends Monstres {}
 interface Case {
     + utiliser(Personnage joueur)
 }
+class CaseVide implements Case{
++utiliser
+}
 
 interface Combat {
     + combattre()
