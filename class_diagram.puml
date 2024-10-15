@@ -1,0 +1,120 @@
+@startuml
+'Diagramme de classe pour le jeu de rôle JavaJDR
+
+class Game {
+    - ArrayList<Case> plateau
+    - Personnage joueur
+    - int positionJoueur
+    + creerPersonnage()
+    + ajouterTableau()
+    + ajouterEnnemis(List<Integer> positionsLibre)
+    + ajouterItems(List<Integer> positionsLibre)
+    + jouer_un_tour()
+    + avancer(int pas)
+    + start()
+}
+
+abstract class Personnage implements Combat {
+    - String nom
+    - int pv
+    - int attaque
+    - int defense
+    + attaquer(Monstres ennemi)
+    + seDefendre()
+    + combattre(Monstres ennemi)
+    + recevoirAttaque(int degats)
+    + equiperOffensif(EquipementOffensif equipement)
+    + equiperDefensif(EquipementDefensif equipement)
+}
+
+class Guerrier extends Personnage {
+    + utiliserBouclier()
+}
+
+class Magicien extends Personnage {
+    + utiliserSort()
+}
+
+abstract class Monstres implements Case, Combat {
+    - String nom
+    - String type
+    - int attaque
+    - int hp
+    + combattre(Personnage joueur)
+    + recevoirAttaque(int degats)
+    + utiliser(Personnage joueur)
+}
+
+class Dragon extends Monstres {}
+class Sorcier extends Monstres {}
+class Gobelin extends Monstres {}
+
+interface Case {
+    + utiliser(Personnage joueur)
+}
+
+interface Combat {
+    + combattre()
+    + recevoirAttaque(int degats)
+}
+
+class EquipementOffensif {
+    - String nom
+    - int puissance
+}
+
+class Arme extends EquipementOffensif implements Case {
+    + utiliser(Personnage joueur)
+}
+
+class Sort extends EquipementOffensif implements Case {
+    + utiliser(Personnage joueur)
+}
+
+class EquipementDefensif {
+    - String nom
+    - int defense
+}
+
+class Bouclier extends EquipementDefensif implements Case {
+    + utiliser(Personnage joueur)
+}
+
+class Philtre extends EquipementDefensif implements Case {
+    + utiliser(Personnage joueur)
+}
+
+class Menu {
+    + dataName() : String
+    + dataType(String name) : Personnage
+    + infoDuJoueur(Personnage joueur)
+}
+
+class Bonus {
+    - String nom
+    - int valeur
+}
+
+class Potion extends Bonus implements Case {
+    + utiliser(Personnage joueur)
+}
+
+Game --> Personnage
+Personnage <|-- Guerrier
+Personnage <|-- Magicien
+Monstres <|-- Dragon
+Monstres <|-- Gobelin
+Monstres <|-- Sorcier
+Personnage --> EquipementOffensif
+Personnage --> EquipementDefensif
+EquipementOffensif <|-- Arme
+EquipementOffensif <|-- Sort
+EquipementDefensif <|-- Bouclier
+EquipementDefensif <|-- Philtre
+Game --> Case
+Monstres --> Combat
+Personnage --> Combat
+Game --> Menu
+Bonus <|-- Potion
+
+@enduml

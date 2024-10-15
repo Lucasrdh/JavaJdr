@@ -1,0 +1,17 @@
+
+@startuml
+'Diagramme de cas d'utilisation pour le jeu JavaJDR
+
+actor Joueur as player
+
+usecase "Créer un personnage" as UC_CreerPersonnage
+usecase "Naviguer sur le plateau" as UC_NaviguerPlateau
+usecase "Combattre un monstre" as UC_CombattreMonstre
+usecase "Ramasser un objet" as UC_RamasserObjet
+
+player --> UC_CreerPersonnage
+player --> UC_NaviguerPlateau
+player --> UC_CombattreMonstre
+player --> UC_RamasserObjet
+
+@enduml

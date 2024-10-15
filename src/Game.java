@@ -19,6 +19,7 @@ public class Game {
 
     public Game() {
         // Lancer la création du personnage ici
+
         this.joueur = creerPersonnage();
         this.positionJoueur = 0;
         ajouterTableau();
@@ -48,7 +49,7 @@ public class Game {
 
         // Ajouter ennemis et caisses surprises
         ajouterEnnemis(positionsLibre);
-        ajouterCaisseSurprise(positionsLibre);
+        ajouterItems(positionsLibre);
     }
 
     // Méthode pour ajouter les ennemis (dragons, sorciers, gobelins) sur le plateau
@@ -73,7 +74,7 @@ public class Game {
     }
 
     // Méthode pour ajouter les caisses surprises (armes, sorts, potions)
-    private void ajouterCaisseSurprise(List<Integer> positionsLibre) {
+    private void ajouterItems(List<Integer> positionsLibre) {
         // Ajouter les massues
         for (int i = 0; i < 5; i++) {
             int position = positionsLibre.remove(0);
@@ -83,31 +84,31 @@ public class Game {
         // Ajouter les épées
         for (int i = 0; i < 4; i++) {
             int position = positionsLibre.remove(0);
-            plateau.set(position, new Arme("Épée", 10));
+            plateau.set(position, new Arme("Épée", 5));
         }
 
         // Ajouter les sorts "éclair"
         for (int i = 0; i < 5; i++) {
             int position = positionsLibre.remove(0);
-            plateau.set(position, new Sort("Éclair", 15));
+            plateau.set(position, new Sort("Éclair", 2));
         }
 
         // Ajouter les sorts "boules de feu"
         for (int i = 0; i < 2; i++) {
             int position = positionsLibre.remove(0);
-            plateau.set(position, new Sort("Boules de feu", 25));
+            plateau.set(position, new Sort("Boules de feu", 7));
         }
 
         // Ajouter les potions standards
         for (int i = 0; i < 6; i++) {
             int position = positionsLibre.remove(0);
-            plateau.set(position, new Potion("Potion standard", 10));
+            plateau.set(position, new Potion("Potion standard", 2));
         }
 
         // Ajouter les grandes potions
         for (int i = 0; i < 2; i++) {
             int position = positionsLibre.remove(0);
-            plateau.set(position, new Potion("Grande potion", 20));
+            plateau.set(position, new Potion("Grande potion", 5));
         }
     }
 
