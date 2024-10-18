@@ -61,29 +61,29 @@ interface Combat {
     + recevoirAttaque(int degats)
 }
 
-class EquipementOffensif {
+class EquipementOffensif  implements Case{
     - String nom
     - int puissance
 }
 
-class Arme extends EquipementOffensif implements Case {
+class Arme extends EquipementOffensif  {
     + utiliser(Personnage joueur)
 }
 
-class Sort extends EquipementOffensif implements Case {
+class Sort extends EquipementOffensif  {
     + utiliser(Personnage joueur)
 }
 
-class EquipementDefensif {
+class EquipementDefensif implements Case {
     - String nom
     - int defense
 }
 
-class Bouclier extends EquipementDefensif implements Case {
+class Bouclier extends EquipementDefensif {
     + utiliser(Personnage joueur)
 }
 
-class Philtre extends EquipementDefensif implements Case {
+class Philtre extends EquipementDefensif  {
     + utiliser(Personnage joueur)
 }
 
@@ -103,21 +103,16 @@ class Potion extends Bonus implements Case {
 }
 
 Game --> Personnage
-Personnage <|-- Guerrier
-Personnage <|-- Magicien
-Monstres <|-- Dragon
-Monstres <|-- Gobelin
-Monstres <|-- Sorcier
-Personnage --> EquipementOffensif
-Personnage --> EquipementDefensif
-EquipementOffensif <|-- Arme
-EquipementOffensif <|-- Sort
-EquipementDefensif <|-- Bouclier
-EquipementDefensif <|-- Philtre
-Game --> Case
-Monstres --> Combat
-Personnage --> Combat
+'Personnage <|-- Guerrier
+'Personnage <|-- Magicien
+'Monstres <|-- Dragon
+'Monstres <|-- Gobelin
+'Monstres <|-- Sorcier
+'Personnage --> EquipementOffensif
+'Personnage --> EquipementDefensif
+'Game --> Case
+'Monstres --> Combat
+'Personnage --> Combat
 Game --> Menu
-Bonus <|-- Potion
 
 @enduml

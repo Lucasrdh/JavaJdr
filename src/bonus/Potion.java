@@ -7,7 +7,7 @@ import personnages.Personnage;
  * Classe représentant une potion dans le jeu. Une potion est un type de bonus qui peut être utilisé pour augmenter les points de vie du joueur.
  * Elle implémente l'interface Case, ce qui signifie qu'elle peut être utilisée lorsqu'un joueur arrive sur la case contenant la potion.
  */
-public class Potion extends Bonus implements Case {
+public class Potion extends Bonus {
 
     /**
      * Constructeur de la classe Potion.

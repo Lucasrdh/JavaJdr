@@ -6,12 +6,38 @@ actor Joueur as player
 
 usecase "Créer un personnage" as UC_CreerPersonnage
 usecase "Naviguer sur le plateau" as UC_NaviguerPlateau
-usecase "Combattre un monstre" as UC_CombattreMonstre
-usecase "Ramasser un objet" as UC_RamasserObjet
+usecase "Rencontrer un monstre" as UC_RencontrerMonstre
+usecase "Rencontrer un objet" as UC_RencontrerObjet
+usecase "Info du joueur" as UC_InfoJoueur
+usecase "Interagir" as UC_Interagir
+usecase "S'équiper" as UC_Equiper
+usecase "Fuir" as UC_Fuir
+usecase "Combattre" as UC_Combattre
+usecase "Lance la partie" as UC_Partie
+usecase "Gagne la partie" as UC_Gagner
+usecase "Quitte le jeux" as UC_Quitter
+usecase "Utiliser" as UC_Utiliser
+usecase "Mourir" as UC_Mourir
 
 player --> UC_CreerPersonnage
-player --> UC_NaviguerPlateau
-player --> UC_CombattreMonstre
-player --> UC_RamasserObjet
 
+UC_CreerPersonnage --> UC_Partie
+UC_CreerPersonnage --> UC_InfoJoueur
+
+UC_Partie --> UC_NaviguerPlateau
+
+UC_NaviguerPlateau --> UC_Interagir
+UC_NaviguerPlateau --> UC_Gagner
+UC_NaviguerPlateau --> UC_Quitter
+
+UC_Interagir --> UC_RencontrerMonstre
+UC_Interagir --> UC_RencontrerObjet
+
+UC_RencontrerObjet --> UC_Equiper
+UC_RencontrerObjet --> UC_Utiliser
+
+UC_RencontrerMonstre --> UC_Fuir
+UC_RencontrerMonstre --> UC_Combattre
+
+UC_Combattre --> UC_Mourir
 @enduml

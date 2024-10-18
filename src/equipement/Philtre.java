@@ -3,7 +3,18 @@ package equipement;
 import Case.*;
 import personnages.Personnage;
 
+/**
+ * Classe représentant un Philtre, un type d'équipement défensif utilisable par les personnages Magiciens.
+ * Un Philtre augmente la défense du personnage.
+ */
 public class Philtre extends EquipementDefensif implements Case {
+
+    /**
+     * Constructeur pour créer un Philtre avec un nom et une valeur de défense.
+     *
+     * @param nom     Le nom du Philtre.
+     * @param defense La valeur de défense attribuée par le Philtre.
+     */
     public Philtre(String nom, int defense) {
         super();
         this.setDefense(defense);
@@ -11,7 +22,12 @@ public class Philtre extends EquipementDefensif implements Case {
         this.setType("Philtre");
     }
 
-
+    /**
+     * Méthode pour utiliser le Philtre. Si le personnage est un Magicien, il pourra s'équiper du Philtre.
+     * Si c'est un Guerrier, il ne pourra pas l'utiliser.
+     *
+     * @param joueur Le personnage qui tente d'utiliser le Philtre.
+     */
     @Override
     public void utiliser(Personnage joueur) {
         if (joueur.getType().equals("Guerrier")) {
@@ -20,17 +36,4 @@ public class Philtre extends EquipementDefensif implements Case {
             joueur.equiperDefensif(this);
         }
     }
-
-//    @Override
-//    public String toString() {
-//        return "Philtre{" +
-//                "nom='" + getNom() + '\'' +
-//                ", type='" + getType() + '\'' +
-//                ", defense=" + getDefense() +
-//                '}';
-//    }
-
 }
-
-
-

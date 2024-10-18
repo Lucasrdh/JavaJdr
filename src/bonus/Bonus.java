@@ -1,13 +1,18 @@
 package bonus;
 
+import Case.Case;
+
 /**
  * Classe abstraite représentant un bonus que le joueur peut obtenir.
  * Un bonus peut avoir un type, un nom, et une valeur spécifique qui influence les statistiques du joueur.
  */
-public abstract class Bonus {
+public abstract class Bonus implements Case {
     private int bonus;
     private String type;
     private String nom;
+
+
+
 
     /**
      * Constructeur par défaut pour la classe Bonus.

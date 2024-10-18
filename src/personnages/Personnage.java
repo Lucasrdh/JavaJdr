@@ -1,6 +1,6 @@
 package personnages;
 
-import combat.Combat;
+import combat.Combattant;
 import equipement.EquipementDefensif;
 import equipement.EquipementOffensif;
 
@@ -8,7 +8,7 @@ import equipement.EquipementOffensif;
  * Classe abstraite représentant un personnage dans le jeu.
  * Un personnage peut combattre, recevoir des attaques, et s'équiper d'armes et de protections.
  */
-public abstract class Personnage implements Combat {
+public abstract class Personnage implements Combattant {
     private String type;
     private String nom;
     private int pv;

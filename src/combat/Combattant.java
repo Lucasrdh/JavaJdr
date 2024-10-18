@@ -7,7 +7,7 @@ import personnages.Personnage;
  * Elle définit les comportements que doivent implémenter les entités capables de combattre
  * comme les personnages et les monstres.
  */
-public interface Combat {
+public interface Combattant {
 
     /**
      * Méthode permettant de lancer un combat contre un joueur.

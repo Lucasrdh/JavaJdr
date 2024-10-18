@@ -1,14 +1,15 @@
 package monstres;
 
 import Case.Case;
-import combat.Combat;
+import combat.Combattant;
 import personnages.Personnage;
 
 /**
  * Classe abstraite représentant un monstre dans le jeu.
  * Les monstres peuvent combattre un joueur et recevoir des attaques.
+ * Cette classe implémente les interfaces {@link Combattant} et {@link Case}.
  */
-public abstract class Monstres implements Combat, Case {
+public abstract class Monstres implements Combattant, Case {
     private String nom;
     private String type;
     private int attaque;
@@ -16,6 +17,7 @@ public abstract class Monstres implements Combat, Case {
 
     /**
      * Constructeur par défaut de la classe Monstres.
+     * Crée un monstre sans nom, type, attaque, ou points de vie initialisés.
      */
     public Monstres() {
 
@@ -73,6 +75,7 @@ public abstract class Monstres implements Combat, Case {
 
     /**
      * Utilise le monstre sur le joueur, ce qui déclenche un combat.
+     * Cela simule une interaction où le joueur rencontre un monstre et doit combattre.
      *
      * @param joueur Le joueur sur lequel le monstre est utilisé.
      */
@@ -81,47 +84,84 @@ public abstract class Monstres implements Combat, Case {
         combattre(joueur);
     }
 
-
+    /**
+     * Retourne le nom du monstre.
+     *
+     * @return Le nom du monstre.
+     */
     public String getNom() {
         return nom;
     }
 
-
+    /**
+     * Définit le nom du monstre.
+     *
+     * @param nom Le nom à attribuer au monstre.
+     */
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-
+    /**
+     * Retourne le type du monstre.
+     *
+     * @return Le type du monstre (par exemple, "Dragon", "Gobelin").
+     */
     public String getType() {
         return type;
     }
 
-
+    /**
+     * Définit le type du monstre.
+     *
+     * @param type Le type à attribuer au monstre.
+     */
     public void setType(String type) {
         this.type = type;
     }
 
-
+    /**
+     * Retourne la valeur d'attaque du monstre.
+     *
+     * @return L'attaque du monstre.
+     */
     public int getAttaque() {
         return attaque;
     }
 
-
+    /**
+     * Définit la valeur d'attaque du monstre.
+     *
+     * @param attaque La nouvelle valeur d'attaque du monstre.
+     */
     public void setAttaque(int attaque) {
         this.attaque = attaque;
     }
 
-
+    /**
+     * Retourne les points de vie (HP) du monstre.
+     *
+     * @return Les points de vie restants du monstre.
+     */
     public int getHp() {
         return hp;
     }
 
-
+    /**
+     * Définit les points de vie (HP) du monstre.
+     *
+     * @param hp Le nombre de points de vie à attribuer au monstre.
+     */
     public void setHp(int hp) {
         this.hp = hp;
     }
 
-
+    /**
+     * Retourne une représentation textuelle du monstre.
+     * Cette représentation inclut le nom et le type du monstre.
+     *
+     * @return Une chaîne de caractères décrivant le monstre.
+     */
     @Override
     public String toString() {
         String Monstre = "Je suis " + nom + "! \r\n";
